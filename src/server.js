@@ -3,8 +3,8 @@ const routes = require('./routes');
 
 const init = async () => {
   const server = Hapi.server({
-    port: 9000,
-    host: 'localhost',
+    port: process.env.PORT || 9000, // 🔧 Wajib agar cocok dengan Railway
+    host: '0.0.0.0',                // 🔧 Wajib agar bisa diakses publik
   });
 
   server.route(routes);
